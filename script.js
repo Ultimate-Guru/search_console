@@ -2,6 +2,13 @@ const searchInput = document.getElementById('searchInput');
 const searchResult = document.getElementById('searchResult');
 const searchButton = document.getElementById('searchButton');
 
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        callAPI();
+    }
+});
+
 const callAPI = async () => {
 
     const query = searchInput.value.trim();
